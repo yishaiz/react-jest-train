@@ -18,7 +18,9 @@ describe('input test', () => {
   });
 
   test('update input value', () => {
-    const input = screen.getByRole('textbox');
+    // const input = screen.getByRole('textbox');
+    const input = screen.getByTestId('test-input');
+
     user.click(input);
     user.keyboard('yishai');
     expect(input.value).toEqual('yishai');

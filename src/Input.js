@@ -16,7 +16,7 @@ function Input() {
   return (
     <div>
       <input
-        data-test-id="test-input"
+        data-testid="test-input"
         type="text"
         style={{ width: '290px', height: '25px' }}
         value={value}
