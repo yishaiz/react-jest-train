@@ -2,16 +2,25 @@ import { render, screen } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import Input from './Input';
 
-test('renders input', () => {
-  render(<Input />);
+describe('input test', () => {
+  beforeEach(() => {
+    render(<Input />);
+  });
 
-  const element = screen.getByRole('textbox');
-  expect(element).toBeInTheDocument();
-});
+  test('renders input', () => {
+    const element = screen.getByRole('textbox');
+    expect(element).toBeInTheDocument();
+  });
 
-test('renders another input', () => {
-  render(<Input />);
+  test('renders another input', () => {
+    const element = screen.getByRole('textbox');
+    expect(element).toBeInTheDocument();
+  });
 
-  const element = screen.getByRole('textbox');
-  expect(element).toBeInTheDocument();
+  test('update input value', () => {
+    const input = screen.getByRole('textbox');
+    user.click(input);
+    user.keyboard('yishai');
+    expect(input.value).toEqual('yishai');
+  });
 });
